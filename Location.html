@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Holiday | Location</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(129, 226, 255, 0.20), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(186, 165, 255, 0.18), transparent 28%),
+        linear-gradient(135deg, #07111d 0%, #102033 45%, #17395b 100%);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 16, 28, 0.78);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      width: min(1200px, 92%);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #8fe5ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: #d6e8f8;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+
+    .hero {
+      padding: 78px 0 50px;
+    }
+
+    .hero-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      min-height: 450px;
+      display: flex;
+      align-items: center;
+      padding: 60px;
+      background:
+        linear-gradient(rgba(4, 9, 18, 0.35), rgba(4, 9, 18, 0.78)),
+        url('Image/22.jpg') center/cover no-repeat;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+    }
+
+    .hero-box::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5, 11, 22, 0.86) 0%, rgba(5, 11, 22, 0.38) 60%, rgba(5, 11, 22, 0.70) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: #c6f3ff;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 62px;
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .hero-content p {
+      max-width: 640px;
+      color: #e5eef8;
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .intro-strip {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .intro-box {
+      padding: 18px 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .intro-box h4 {
+      font-size: 20px;
+      color: #90ebff;
+      margin-bottom: 6px;
+    }
+
+    .intro-box p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #e3edf8;
+    }
+
+    .section {
+      padding: 30px 0 80px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      max-width: 760px;
+      margin: auto;
+      color: #cad9e8;
+      line-height: 1.8;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.8fr;
+      gap: 24px;
+    }
+
+    .location-column {
+      display: grid;
+      gap: 28px;
+    }
+
+    .sidebar-column {
+      display: grid;
+      gap: 20px;
+      align-content: start;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .location-card {
+      padding: 30px;
+    }
+
+    .location-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .location-name h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .location-name p {
+      color: #ccdae8;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 650px;
+    }
+
+    .location-badge {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #8de7ff, #baa8ff);
+      color: #07121d;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .location-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .info-item {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .info-item h4 {
+      font-size: 15px;
+      color: #98ecff;
+      margin-bottom: 8px;
+    }
+
+    .info-item p {
+      font-size: 14px;
+      color: #e6f1fb;
+      line-height: 1.7;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .feature-box {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #ecf5ff;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .gallery-grid img {
+      height: 165px;
+      object-fit: cover;
+      border-radius: 18px;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .side-card {
+      padding: 24px;
+    }
+
+    .side-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      margin-bottom: 14px;
+    }
+
+    .side-card p {
+      color: #d6e2ee;
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .check-list div {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #eaf4ff;
+      font-size: 14px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .socials a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 20px;
+      transition: 0.3s ease;
+    }
+
+    .socials a:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .big-cta {
+      margin-top: 10px;
+      padding: 34px 28px;
+      text-align: center;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(141, 231, 255, 0.16), rgba(186, 168, 255, 0.15));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+    }
+
+    .big-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .big-cta p {
+      color: #d9e4f0;
+      max-width: 720px;
+      margin: 0 auto 20px;
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #8de7ff, #baa8ff);
+      color: #08131f;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(141, 231, 255, 0.20);
+    }
+
+    .footer {
+      margin-top: 70px;
+      padding: 24px 0;
+      text-align: center;
+      background: rgba(5, 12, 22, 0.74);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #d7e3f0;
+    }
+
+    .footer p {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1050px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+      }
+
+      .location-info {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .hero-box {
+        padding: 36px 24px;
+        min-height: 380px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .intro-strip,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav-inner {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">Fresh <span>Holiday</span></div>
+      <div class="nav-links">
+        <a href="Fresh Holiday.html">Home</a>
+        <a href="Contact Us.html">Contact Us</a>
+        <a href="Packages Offered.html">Package Offered</a>
+        <a href="Services.html">Service Offered</a>
+        <a href="Other Activiti.html">Other Activities</a>
+        <a href="Location.html" class="active">Location</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-box">
+        <div class="hero-content">
+          <div class="hero-tag">📍 Beautiful Destinations • Winter Travel Experience</div>
+          <h1>Explore the locations behind your Fresh Holiday adventure</h1>
+          <p>
+            Fresh Holiday brings guests into beautiful winter surroundings where snowy views, outdoor fun,
+            and memorable travel moments come together. Our featured locations offer a calm natural setting,
+            access to snow activities, and a holiday atmosphere that feels both exciting and relaxing.
+          </p>
+
+          <div class="intro-strip">
+            <div class="intro-box">
+              <h4>Scenery</h4>
+              <p>Enjoy snowy views and fresh mountain surroundings during your stay.</p>
+            </div>
+            <div class="intro-box">
+              <h4>Adventure</h4>
+              <p>Stay close to skiing, snowboarding, and more winter activities.</p>
+            </div>
+            <div class="intro-box">
+              <h4>Travel</h4>
+              <p>Discover locations that make the holiday feel special and memorable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Featured Locations</h2>
+        <p>
+          The places connected to Fresh Holiday are chosen to give guests a strong winter travel feeling.
+          These destinations support a relaxing environment, access to snow experiences, and a beautiful setting for unforgettable trips.
+        </p>
+      </div>
+
+      <div class="content-grid">
+        <div class="location-column">
+
+          <div class="location-card glass-card">
+            <div class="location-header">
+              <div class="location-name">
+                <h3>Ice Mountain</h3>
+                <p>
+                  The ski resort Ice Mountain is located in the Province of Hainaut in Belgium, within the Wallonia region.
+                  It is a winter destination connected with skiing and snowboarding, and it offers a compact slope area for visitors who want a focused snow activity experience.
+                </p>
+              </div>
+              <div class="location-badge">Belgium</div>
+            </div>
+
+            <div class="location-info">
+              <div class="info-item">
+                <h4>Location Type</h4>
+                <p>Winter resort area with skiing and snowboarding access.</p>
+              </div>
+              <div class="info-item">
+                <h4>Region</h4>
+                <p>Province of Hainaut, Wallonia, Belgium.</p>
+              </div>
+              <div class="info-item">
+                <h4>Main Benefit</h4>
+                <p>A compact location for a simple and enjoyable snow sports experience.</p>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-box">🏔️ A winter location connected with snow experiences</div>
+              <div class="feature-box">🎿 Suitable for skiing and snowboarding visitors</div>
+              <div class="feature-box">❄️ A calm destination with a clear winter atmosphere</div>
+              <div class="feature-box">📸 A scenic choice for a memorable holiday trip</div>
+            </div>
+          </div>
+
+          <div class="location-card glass-card">
+            <div class="location-header">
+              <div class="location-name">
+                <h3>Next Location</h3>
+                <p>
+                  Another destination linked to the holiday experience is Hampshire in West Virginia, United States.
+                  With an area of 149 acres or 60 hectares, this location adds another travel dimension and gives guests a wider sense of adventure beyond one single winter setting.
+                </p>
+              </div>
+              <div class="location-badge">United States</div>
+            </div>
+
+            <div class="location-info">
+              <div class="info-item">
+                <h4>Location Type</h4>
+                <p>Travel destination with a broader outdoor setting and open space.</p>
+              </div>
+              <div class="info-item">
+                <h4>Region</h4>
+                <p>Hampshire, West Virginia, United States.</p>
+              </div>
+              <div class="info-item">
+                <h4>Main Benefit</h4>
+                <p>Adds variety and a larger travel experience to the holiday plan.</p>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-box">🌍 Offers a second destination for a richer holiday idea</div>
+              <div class="feature-box">🏞️ Open outdoor space for a broader travel atmosphere</div>
+              <div class="feature-box">✈️ Expands the holiday experience beyond one location</div>
+              <div class="feature-box">🧭 Good for guests who enjoy variety and exploration</div>
+            </div>
+          </div>
+
+          <div class="location-card glass-card">
+            <div class="location-header">
+              <div class="location-name">
+                <h3>Location Gallery</h3>
+                <p>
+                  These images help show the atmosphere, views, and winter feeling connected with Fresh Holiday locations.
+                  A good destination is not only about activities, but also about the scenery, mood, and travel memories it creates.
+                </p>
+              </div>
+              <div class="location-badge">Travel Views</div>
+            </div>
+
+            <div class="gallery-grid">
+              <img src="Image/22.jpg" alt="Location Image 1">
+              <img src="Image/16.jpg" alt="Location Image 2">
+              <img src="Image/30.jpg" alt="Location Image 3">
+              <img src="Image/31.jpg" alt="Location Image 4">
+              <img src="Image/29.jpg" alt="Location Image 5">
+              <img src="Image/27.jpg" alt="Location Image 6">
+              <img src="Image/31.jpg" alt="Location Image 7">
+              <img src="Image/33.jpg" alt="Location Image 8">
+            </div>
+          </div>
+
+          <div class="big-cta">
+            <h3>Ready to explore your winter destination?</h3>
+            <p>
+              Fresh Holiday can help you plan a trip that combines beautiful scenery, snow activities, and a relaxing travel atmosphere.
+              Contact us to begin your next winter adventure.
+            </p>
+            <a href="Contact Us.html" class="btn">Contact Us Now</a>
+          </div>
+        </div>
+
+        <div class="sidebar-column">
+          <div class="side-card glass-card">
+            <h3>What We Need?</h3>
+            <div class="check-list">
+              <div>🧥 Ski or snowboard jacket</div>
+              <div>👖 Ski or snowboard pants or bibs</div>
+              <div>🧦 Ski or snowboard socks</div>
+              <div>🧤 Gloves or mittens</div>
+              <div>🪖 Helmet</div>
+              <div>🥽 Goggles</div>
+              <div>👕 Long underwear</div>
+              <div>🧣 Light fleece or wool top</div>
+            </div>
+          </div>
+
+          <div class="side-card glass-card">
+            <h3>Travel Atmosphere</h3>
+            <p>
+              A good location improves the whole holiday because it shapes the mood of the trip.
+              Snowy views, peaceful surroundings, and access to winter activities make the destination feel more special and complete.
+            </p>
+          </div>
+
+          <div class="side-card glass-card">
+            <h3>Is Skating Good Exercise?</h3>
+            <p>
+              Yes. Skating is a strong full-body activity that supports cardio fitness, balance, and control.
+              It is a fun outdoor exercise and works well as part of an active winter holiday.
+            </p>
+          </div>
+
+          <div class="side-card glass-card">
+            <h3>Why Location Matters</h3>
+            <p>
+              The location of a holiday affects comfort, scenery, activities, and overall experience.
+              A beautiful and well-matched destination can make the trip more enjoyable and more memorable for guests.
+            </p>
+          </div>
+
+          <div class="side-card glass-card">
+            <h3>Follow Fresh Holiday</h3>
+            <p>
+              Stay connected with our winter destination ideas, travel inspiration, and holiday highlights through our social media pages.
+            </p>
+
+            <div class="socials">
+              <a href="https://www.facebook.com/SkiVacations/" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.youtube.com/c/DamnSkilled" target="_blank"><i class="fa fa-youtube"></i></a>
+              <a href="https://www.instagram.com/explore/tags/skiing/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>📞 Contact Us - +19159969739, +17864206154</p>
+    <p>© Fresh Holiday — Detailed Winter Location Experience</p>
+  </footer>
+
+</body>
+</html>

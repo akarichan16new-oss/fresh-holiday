@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Holiday | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-dark: #07111f;
+      --bg-mid: #0d1b2a;
+      --primary: #70e1ff;
+      --secondary: #9b8cff;
+      --text: #ecf4ff;
+      --muted: #bfd0e3;
+      --card: rgba(255, 255, 255, 0.10);
+      --border: rgba(255, 255, 255, 0.18);
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(112, 225, 255, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(155, 140, 255, 0.20), transparent 30%),
+        linear-gradient(135deg, #07111f 0%, #0d1b2a 45%, #10263f 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.35;
+      z-index: -1;
+      animation: floatGlow 10s ease-in-out infinite;
+    }
+
+    body::before {
+      background: #70e1ff;
+      top: -100px;
+      left: -80px;
+    }
+
+    body::after {
+      background: #9b8cff;
+      right: -80px;
+      bottom: -120px;
+      animation-delay: 2s;
+    }
+
+    @keyframes floatGlow {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(25px) scale(1.05);
+      }
+    }
+
+    .navbar {
+      width: 100%;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(6, 16, 30, 0.55);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: white;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 10px 16px;
+      border-radius: 30px;
+      color: #dfefff;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 130px 7% 80px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(7,17,31,0.45), rgba(7,17,31,0.75)),
+        url('Image/16.jpg') center/cover no-repeat;
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(7,17,31,0.78) 0%, rgba(7,17,31,0.22) 60%, rgba(7,17,31,0.58) 100%);
+      z-index: -1;
+    }
+
+    .hero-text .tag {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 14px;
+      color: var(--primary);
+      margin-bottom: 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      max-width: 720px;
+    }
+
+    .hero-text p {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 40px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #9eeeff);
+      color: #04101d;
+      box-shadow: 0 10px 25px rgba(112, 225, 255, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.14);
+      transform: translateY(-3px);
+    }
+
+    .hero-cards {
+      display: grid;
+      gap: 18px;
+    }
+
+    .glass-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card h3,
+    .mini-card h3,
+    .plan-card h3,
+    .about-card h3,
+    .benefit-card h3,
+    .preview-card h3 {
+      font-size: 24px;
+      margin-bottom: 14px;
+      color: white;
+    }
+
+    .feature-card p,
+    .mini-card p,
+    .plan-card p,
+    .about-card p,
+    .benefit-card p,
+    .preview-card p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      padding: 18px 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      text-align: center;
+    }
+
+    .stat h4 {
+      font-size: 28px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .plan-card {
+      padding: 26px;
+    }
+
+    .plan-card .small-tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: var(--primary);
+      font-size: 13px;
+    }
+
+    .plan-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .plan-list div {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #eaf5ff;
+      font-size: 14px;
+    }
+
+    .info-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+    }
+
+    .packing-list {
+      margin-top: 15px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .packing-list div {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 16px;
+      border-radius: 16px;
+      font-size: 14px;
+      color: #eaf5ff;
+    }
+
+    .side-column {
+      display: grid;
+      gap: 20px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .preview-card {
+      padding: 26px;
+    }
+
+    .preview-card .link-btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #ffffff;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .preview-card .link-btn:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      grid-template-rows: 260px 260px;
+      gap: 18px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .gallery-item img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7,17,31,0.8), rgba(7,17,31,0.08));
+    }
+
+    .gallery-item span {
+      position: absolute;
+      left: 18px;
+      bottom: 16px;
+      z-index: 1;
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+    }
+
+    .gallery-large {
+      grid-row: span 2;
+    }
+
+    .contact-box {
+      text-align: center;
+      padding: 40px 30px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(112,225,255,0.15), rgba(155,140,255,0.16));
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box h3 {
+      font-size: 32px;
+      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.8;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .socials a {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+      font-size: 22px;
+      transition: 0.3s ease;
+    }
+
+    .socials a:hover {
+      transform: translateY(-4px) scale(1.06);
+      background: rgba(255,255,255,0.18);
+    }
+
+    .footer {
+      margin-top: 30px;
+      padding: 26px 7%;
+      text-align: center;
+      color: #c8d7e8;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(4, 11, 20, 0.45);
+      backdrop-filter: blur(12px);
+    }
+
+    @media (max-width: 1100px) {
+      .hero,
+      .info-layout,
+      .plan-grid,
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 58px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 240px 240px 240px;
+      }
+
+      .gallery-large {
+        grid-row: span 1;
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        flex-direction: column;
+        gap: 14px;
+        padding: 18px 5%;
+      }
+
+      .hero {
+        padding: 150px 5% 70px;
+      }
+
+      .section {
+        padding: 75px 5%;
+      }
+
+      .hero-text h1 {
+        font-size: 42px;
+      }
+
+      .section-title h2 {
+        font-size: 34px;
+      }
+
+      .packing-list,
+      .stats-row,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-large {
+        grid-column: span 1;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Fresh <span>Holiday</span></div>
+    <div class="nav-links">
+      <a href="Fresh Holiday.html" class="active">Home</a>
+      <a href="Contact Us.html">Contact Us</a>
+      <a href="Packages Offered.html">Package Offered</a>
+      <a href="Services.html">Service Offered</a>
+      <a href="Other Activiti.html">Other Activities</a>
+      <a href="Location.html">Location</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <div class="tag">❄ Luxury Winter Escape • Ski Adventure Experience</div>
+      <h1>Chase the snow. Feel the adventure.</h1>
+      <p>
+        Welcome to <strong>Fresh Holiday</strong>, where mountain beauty, exciting ski experiences,
+        relaxing stays, and unforgettable winter moments come together in one modern holiday journey.
+        Our website is designed to help guests explore packages, services, activities, and destinations
+        in a clear and stylish way.
+      </p>
+      <div class="hero-buttons">
+        <a href="Packages Offered.html" class="btn btn-primary">Explore Packages</a>
+        <a href="Contact Us.html" class="btn btn-outline">Book Your Trip</a>
+      </div>
+    </div>
+
+    <div class="hero-cards">
+      <div class="glass-card feature-card">
+        <h3>About Skiing</h3>
+        <p>
+          Skiing is one of the fastest non-motorized sports on land. It combines speed, balance,
+          fitness, and excitement while also giving visitors beautiful snowy views and a strong sense
+          of freedom in the mountains.
+        </p>
+
+        <div class="stats-row">
+          <div class="stat">
+            <h4>156.2</h4>
+            <span>mph record speed</span>
+          </div>
+          <div class="stat">
+            <h4>Top</h4>
+            <span>winter adventure</span>
+          </div>
+          <div class="stat">
+            <h4>100%</h4>
+            <span>snow thrill</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card mini-card">
+        <h3>Why choose us?</h3>
+        <p>
+          Fresh Holiday offers stylish winter travel, helpful services, comfortable holiday plans,
+          exciting extra activities, and beautiful locations for guests who want more than a normal trip.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>Plan Your Holiday</h2>
+      <p>
+        Fresh Holiday gives guests a complete winter travel experience. You can choose the package that fits your stay,
+        explore the services you need, enjoy extra activities, and discover destinations that make the whole trip more special.
+      </p>
+    </div>
+
+    <div class="plan-grid">
+      <div class="glass-card plan-card">
+        <div class="small-tag">Package Options</div>
+        <h3>Choose Your Stay</h3>
+        <p>
+          Guests can select from Basic, Standard, and Deluxe packages depending on how much comfort,
+          relaxation, and ski access they want during their holiday.
+        </p>
+        <div class="plan-list">
+          <div>☕ Refreshments and meals</div>
+          <div>💆 Spa treatments</div>
+          <div>🎿 Lift pass access</div>
+        </div>
+      </div>
+
+      <div class="glass-card plan-card">
+        <div class="small-tag">Service Support</div>
+        <h3>Prepare With Ease</h3>
+        <p>
+          Our services help visitors enjoy the trip more comfortably through ski lessons, equipment hire,
+          and fitting support for better safety and performance.
+        </p>
+        <div class="plan-list">
+          <div>🏂 Lessons for beginners</div>
+          <div>⛷️ Equipment hire</div>
+          <div>🛠️ Servicing support</div>
+        </div>
+      </div>
+
+      <div class="glass-card plan-card">
+        <div class="small-tag">Extra Experiences</div>
+        <h3>Enjoy More Activities</h3>
+        <p>
+          The holiday experience can also include bob sledding, skating, mountain biking, and spa
+          experiences for guests who want more variety.
+        </p>
+        <div class="plan-list">
+          <div>🛷 Bob sledding</div>
+          <div>⛸️ Ice skating</div>
+          <div>🌿 Relaxing spa time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>Prepare for the Mountain</h2>
+      <p>
+        A great ski holiday starts with the right equipment, the right energy, and the right destination.
+      </p>
+    </div>
+
+    <div class="info-layout">
+      <div class="glass-card about-card">
+        <h3>What we need?</h3>
+        <p>
+          To enjoy skiing safely and comfortably, it is important to wear warm and practical clothing.
+          The right ski outfit helps protect your body from cold weather and supports better movement during activity.
+        </p>
+
+        <div class="packing-list">
+          <div>🧥 Ski jacket</div>
+          <div>👖 Ski pants</div>
+          <div>🧦 Ski socks</div>
+          <div>🧤 Gloves or mittens</div>
+          <div>🪖 Helmet</div>
+          <div>🥽 Goggles</div>
+          <div>🧣 Wool or fleece top</div>
+          <div>👕 Long underwear</div>
+        </div>
+      </div>
+
+      <div class="side-column">
+        <div class="glass-card benefit-card">
+          <h3>Is skiing good?</h3>
+          <p>
+            Yes. Skiing strengthens the glutes, hamstrings, and core muscles. It also improves balance,
+            coordination, and endurance, making it both a fun and healthy winter sport.
+          </p>
+        </div>
+
+        <div class="glass-card benefit-card">
+          <h3>Adventure feeling</h3>
+          <p>
+            Skiing is not only about exercise. It is also about excitement, confidence, and enjoying the beauty
+            of snowy mountains in a truly unforgettable way.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>Explore More</h2>
+      <p>
+        Fresh Holiday is organised into different pages so visitors can quickly explore the part of the holiday that interests them most.
+      </p>
+    </div>
+
+    <div class="preview-grid">
+      <div class="glass-card preview-card">
+        <h3>Packages</h3>
+        <p>
+          Compare the Basic, Standard, and Deluxe package plans and choose the one that matches your holiday style.
+        </p>
+        <a href="Packages Offered.html" class="link-btn">View Packages</a>
+      </div>
+
+      <div class="glass-card preview-card">
+        <h3>Services</h3>
+        <p>
+          Learn about ski lessons, equipment hire, and servicing support designed to help guests travel more easily.
+        </p>
+        <a href="Services.html" class="link-btn">View Services</a>
+      </div>
+
+      <div class="glass-card preview-card">
+        <h3>Other Activities</h3>
+        <p>
+          Discover extra experiences such as skating, bob sledding, mountain biking, and relaxing spa treatments.
+        </p>
+        <a href="Other Activiti.html" class="link-btn">View Activities</a>
+      </div>
+
+      <div class="glass-card preview-card">
+        <h3>Location</h3>
+        <p>
+          Explore the featured destinations connected with Fresh Holiday and enjoy the snowy atmosphere behind the trip.
+        </p>
+        <a href="Location.html" class="link-btn">View Location</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>Snow Moments Gallery</h2>
+      <p>
+        A glimpse into the beauty, movement, and atmosphere of an unforgettable ski adventure.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-large">
+        <img src="Image/16.jpg" alt="Ski Adventure Main">
+        <span>Frozen Peaks</span>
+      </div>
+      <div class="gallery-item">
+        <img src="Image/22.jpg" alt="Ski View 2">
+        <span>Snow Rush</span>
+      </div>
+      <div class="gallery-item">
+        <img src="Image/31.jpg" alt="Ski View 3">
+        <span>Mountain Air</span>
+      </div>
+      <div class="gallery-item">
+        <img src="Image/30.jpg" alt="Ski View 4">
+        <span>Adventure Time</span>
+      </div>
+      <div class="gallery-item">
+        <img src="Image/22.jpg" alt="Ski View 5">
+        <span>Winter Spirit</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="contact-box">
+      <h3>Start Your Holiday Journey</h3>
+      <p>
+        Fresh Holiday brings together style, comfort, adventure, and winter travel inspiration in one place.
+        Contact us today and begin planning a snow experience that matches your ideal holiday.
+      </p>
+      <a href="Contact Us.html" class="btn btn-primary">Contact Now</a>
+
+      <div class="socials">
+        <a href="https://www.facebook.com/SkiVacations/" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.youtube.com/c/DamnSkilled" target="_blank"><i class="fa fa-youtube"></i></a>
+        <a href="https://www.instagram.com/explore/tags/skiing/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>📞 Contact Us: +19159969739, +17864206154</p>
+    <p>© Fresh Holiday — Modern Ski Adventure Experience</p>
+  </footer>
+
+</body>
+</html>

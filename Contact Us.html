@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Holiday | Contact Us</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(117, 214, 255, 0.18), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(186, 169, 255, 0.18), transparent 25%),
+        linear-gradient(135deg, #08121f 0%, #102033 45%, #17304d 100%);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(8, 18, 31, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      width: min(1200px, 92%);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #87dcff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: #d8e8f8;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255,255,255,0.12);
+      color: #ffffff;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      padding: 90px 0 60px;
+    }
+
+    .hero-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      min-height: 420px;
+      padding: 60px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(5, 13, 24, 0.35), rgba(5, 13, 24, 0.72)),
+        url('Image/27.jpg') center/cover no-repeat;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+    }
+
+    .hero-content {
+      max-width: 650px;
+      z-index: 1;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #bfeeff;
+      font-size: 14px;
+    }
+
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 60px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero-content p {
+      color: #e4eef8;
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 580px;
+    }
+
+    /* Section titles */
+    .section {
+      padding: 35px 0 80px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #c8d7e8;
+      max-width: 720px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    /* Cards */
+    .glass {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+      border-radius: 26px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 30px;
+    }
+
+    .contact-card {
+      padding: 28px 24px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .contact-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #7ee4ff, #a79cff);
+      color: #07111d;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .contact-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p,
+    .contact-card a {
+      color: #d6e5f3;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* main split */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      margin-top: 15px;
+    }
+
+    .form-box,
+    .info-box {
+      padding: 30px;
+    }
+
+    .form-box h3,
+    .info-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      margin-bottom: 14px;
+    }
+
+    .form-box p,
+    .info-box p {
+      color: #cddceb;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.07);
+      color: #ffffff;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #b9cadb;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #85e8ff, #b2a2ff);
+      color: #08121f;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-top: 12px;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(133, 232, 255, 0.2);
+    }
+
+    /* Checklist */
+    .mini-box {
+      padding: 22px;
+      margin-top: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mini-box h4 {
+      font-size: 20px;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .list div {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      color: #dce9f7;
+      font-size: 14px;
+    }
+
+    /* Social */
+    .socials {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .socials a {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 22px;
+      transition: 0.3s ease;
+    }
+
+    .socials a:hover {
+      background: rgba(255,255,255,0.16);
+      transform: translateY(-4px);
+    }
+
+    /* Gallery */
+    .gallery {
+      margin-top: 60px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 250px 250px;
+      gap: 18px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+      border-radius: 24px;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.25);
+    }
+
+    .gallery-item img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(6,15,28,0.85), rgba(6,15,28,0.08));
+    }
+
+    .gallery-item span {
+      position: absolute;
+      left: 18px;
+      bottom: 16px;
+      z-index: 1;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .gallery-large {
+      grid-row: span 2;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 70px;
+      padding: 24px 0;
+      text-align: center;
+      background: rgba(5, 12, 22, 0.7);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #d6e4f2;
+    }
+
+    .footer p {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .contact-grid,
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 220px 220px;
+      }
+
+      .gallery-large {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero-box {
+        padding: 35px 24px;
+        min-height: 360px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .form-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-large {
+        grid-column: span 1;
+      }
+
+      .nav-inner {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">Fresh <span>Holiday</span></div>
+      <div class="nav-links">
+        <a href="Fresh Holiday.html">Home</a>
+        <a href="Contact Us.html" class="active">Contact Us</a>
+        <a href="Packages Offered.html">Package Offered</a>
+        <a href="Services.html">Service Offered</a>
+        <a href="Other Activiti.html">Other Activities</a>
+        <a href="Location.html">Location</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-box">
+        <div class="hero-content">
+          <div class="tag">⛷️ Winter Escape • Travel With Style</div>
+          <h1>Contact us for your next snow adventure</h1>
+          <p>
+            Fresh Holiday is ready to help you plan a beautiful and exciting ski experience.
+            Reach out to us for bookings, packages, activities, and holiday information.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Get In Touch</h2>
+        <p>
+          We would love to help you create a memorable winter holiday. Contact us anytime through phone, social media, or the form below.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card glass">
+          <div class="contact-icon"><i class="fa fa-phone"></i></div>
+          <h3>Call Us</h3>
+          <p>+19159969739</p>
+          <p>+17864206154</p>
+          <p>+14148929343</p>
+        </div>
+
+        <div class="contact-card glass">
+          <div class="contact-icon"><i class="fa fa-map-marker"></i></div>
+          <h3>Visit Us</h3>
+          <p>Fresh Holiday Travel Office</p>
+          <p>Snow adventure planning and holiday support for every guest.</p>
+        </div>
+
+        <div class="contact-card glass">
+          <div class="contact-icon"><i class="fa fa-share-alt"></i></div>
+          <h3>Follow Us</h3>
+          <p>Stay connected and explore our latest ski holiday inspiration online.</p>
+          <div class="socials" style="justify-content:center;">
+            <a href="https://www.facebook.com/SkiVacations/" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.youtube.com/c/DamnSkilled" target="_blank"><i class="fa fa-youtube"></i></a>
+            <a href="https://www.instagram.com/explore/tags/skiing/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-grid">
+        <div class="form-box glass">
+          <h3>Send Us a Message</h3>
+          <p>
+            Fill in your details and let us know what kind of ski holiday you are looking for.
+          </p>
+
+          <form>
+            <div class="form-grid">
+              <div class="form-group">
+                <input type="text" placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Your Email">
+              </div>
+              <div class="form-group full">
+                <input type="text" placeholder="Subject">
+              </div>
+              <div class="form-group full">
+                <textarea placeholder="Write your message..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+
+        <div class="info-box glass">
+          <h3>Travel Tips</h3>
+          <p>
+            Before your ski trip, make sure you prepare the right clothing and equipment for a safe and comfortable holiday.
+          </p>
+
+          <div class="mini-box">
+            <h4>What we need?</h4>
+            <div class="list">
+              <div>🧥 Ski or snowboard jacket</div>
+              <div>👖 Ski pants or bibs</div>
+              <div>🧦 Ski socks</div>
+              <div>🧤 Gloves or mittens</div>
+              <div>🪖 Helmet</div>
+              <div>🥽 Goggles</div>
+              <div>👕 Long underwear</div>
+              <div>🧣 Light fleece or wool top</div>
+            </div>
+          </div>
+
+          <div class="mini-box">
+            <h4>Skiing is good?</h4>
+            <p style="margin-bottom:0;">
+              Yes. Skiing helps strengthen the glutes, hamstrings, and core muscles. It also improves balance, control, and endurance while giving you an exciting outdoor experience.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="section-title">
+          <h2>Holiday Moments</h2>
+          <p>Explore the beauty and adventure of our ski holiday experiences.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item gallery-large">
+            <img src="Image/27.jpg" alt="Holiday Image 1">
+            <span>Winter Contact Journey</span>
+          </div>
+          <div class="gallery-item">
+            <img src="Image/29.jpg" alt="Holiday Image 2">
+            <span>Snow Escape</span>
+          </div>
+          <div class="gallery-item">
+            <img src="Image/33.jpg" alt="Holiday Image 3">
+            <span>Cold Adventure</span>
+          </div>
+          <div class="gallery-item">
+            <img src="Image/31.jpg" alt="Holiday Image 4">
+            <span>Mountain Experience</span>
+          </div>
+          <div class="gallery-item">
+            <img src="Image/29.jpg" alt="Holiday Image 5">
+            <span>Travel Inspiration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>📞 Contact Us: +19159969739, +17864206154, +14148929343</p>
+    <p>© Fresh Holiday — Modern Ski Adventure Website</p>
+  </footer>
+
+</body>
+</html>

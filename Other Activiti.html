@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Holiday | Other Activities</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(129, 226, 255, 0.20), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(186, 165, 255, 0.18), transparent 28%),
+        linear-gradient(135deg, #07111d 0%, #102033 45%, #17395b 100%);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 16, 28, 0.78);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      width: min(1200px, 92%);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #8fe5ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: #d6e8f8;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+
+    .hero {
+      padding: 78px 0 50px;
+    }
+
+    .hero-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      min-height: 450px;
+      display: flex;
+      align-items: center;
+      padding: 60px;
+      background:
+        linear-gradient(rgba(4, 9, 18, 0.35), rgba(4, 9, 18, 0.78)),
+        url('Image/28.jpg') center/cover no-repeat;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+    }
+
+    .hero-box::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5, 11, 22, 0.86) 0%, rgba(5, 11, 22, 0.38) 60%, rgba(5, 11, 22, 0.70) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: #c6f3ff;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 62px;
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .hero-content p {
+      max-width: 620px;
+      color: #e5eef8;
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .intro-strip {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .intro-box {
+      padding: 18px 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .intro-box h4 {
+      font-size: 19px;
+      color: #90ebff;
+      margin-bottom: 6px;
+    }
+
+    .intro-box p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #e3edf8;
+    }
+
+    .section {
+      padding: 30px 0 80px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      max-width: 760px;
+      margin: auto;
+      color: #cad9e8;
+      line-height: 1.8;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.8fr;
+      gap: 24px;
+    }
+
+    .activities-column {
+      display: grid;
+      gap: 28px;
+    }
+
+    .sidebar-column {
+      display: grid;
+      gap: 20px;
+      align-content: start;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .activity-card {
+      padding: 30px;
+    }
+
+    .activity-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .activity-name h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .activity-name p {
+      color: #ccdae8;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 650px;
+    }
+
+    .activity-badge {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #8de7ff, #baa8ff);
+      color: #07121d;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .activity-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .info-item {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .info-item h4 {
+      font-size: 15px;
+      color: #98ecff;
+      margin-bottom: 8px;
+    }
+
+    .info-item p {
+      font-size: 14px;
+      color: #e6f1fb;
+      line-height: 1.7;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .feature-box {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #ecf5ff;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .gallery-grid img {
+      height: 165px;
+      object-fit: cover;
+      border-radius: 18px;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .side-card {
+      padding: 24px;
+    }
+
+    .side-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      margin-bottom: 14px;
+    }
+
+    .side-card p {
+      color: #d6e2ee;
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .check-list div {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #eaf4ff;
+      font-size: 14px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .socials a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 20px;
+      transition: 0.3s ease;
+    }
+
+    .socials a:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .big-cta {
+      margin-top: 10px;
+      padding: 34px 28px;
+      text-align: center;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(141, 231, 255, 0.16), rgba(186, 168, 255, 0.15));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+    }
+
+    .big-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .big-cta p {
+      color: #d9e4f0;
+      max-width: 720px;
+      margin: 0 auto 20px;
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #8de7ff, #baa8ff);
+      color: #08131f;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(141, 231, 255, 0.20);
+    }
+
+    .footer {
+      margin-top: 70px;
+      padding: 24px 0;
+      text-align: center;
+      background: rgba(5, 12, 22, 0.74);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #d7e3f0;
+    }
+
+    .footer p {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1050px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+      }
+
+      .activity-info {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .hero-box {
+        padding: 36px 24px;
+        min-height: 380px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .intro-strip,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav-inner {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">Fresh <span>Holiday</span></div>
+      <div class="nav-links">
+        <a href="Fresh Holiday.html">Home</a>
+        <a href="Contact Us.html">Contact Us</a>
+        <a href="Packages Offered.html">Package Offered</a>
+        <a href="Services.html">Service Offered</a>
+        <a href="Other Activiti.html" class="active">Other Activities</a>
+        <a href="Location.html">Location</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-box">
+        <div class="hero-content">
+          <div class="hero-tag">❄️ Extra Experiences • Winter Fun Beyond Skiing</div>
+          <h1>Enjoy more exciting activities during your holiday stay</h1>
+          <p>
+            Fresh Holiday is not only about skiing. Guests can also enjoy a wider winter experience through
+            exciting and relaxing activities such as bob sledding, ice skating, mountain biking, and spa treatments.
+            These extra options help make the holiday more memorable, more active, and more enjoyable for different types of visitors.
+          </p>
+
+          <div class="intro-strip">
+            <div class="intro-box">
+              <h4>Adventure</h4>
+              <p>Feel more excitement with fast and energetic snow activities.</p>
+            </div>
+            <div class="intro-box">
+              <h4>Fitness</h4>
+              <p>Stay active through movement, balance, and outdoor exercise.</p>
+            </div>
+            <div class="intro-box">
+              <h4>Relaxation</h4>
+              <p>Take time to rest and recharge with calm wellness options.</p>
+            </div>
+            <div class="intro-box">
+              <h4>Variety</h4>
+              <p>Choose different experiences based on your mood and holiday style.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Other Activities</h2>
+        <p>
+          These activities are designed for guests who want more than a normal ski holiday. Some visitors enjoy high-energy adventures,
+          while others prefer relaxing experiences. Our extra activity choices help create a more complete winter trip.
+        </p>
+      </div>
+
+      <div class="content-grid">
+        <div class="activities-column">
+
+          <div class="activity-card glass-card">
+            <div class="activity-header">
+              <div class="activity-name">
+                <h3>Bob Sledding</h3>
+                <p>
+                  Bob sledding is one of the most exciting winter sports for guests who enjoy speed and adventure.
+                  It offers a thrilling downhill experience on an icy track and brings a strong sense of movement, energy, and fun.
+                </p>
+              </div>
+              <div class="activity-badge">Fast Adventure</div>
+            </div>
+
+            <div class="activity-info">
+              <div class="info-item">
+                <h4>Best For</h4>
+                <p>Guests who enjoy speed, excitement, and memorable winter action.</p>
+              </div>
+              <div class="info-item">
+                <h4>Activity Style</h4>
+                <p>Dynamic, thrilling, and ideal for adventure seekers.</p>
+              </div>
+              <div class="info-item">
+                <h4>Main Benefit</h4>
+                <p>Adds a powerful excitement factor to the holiday experience.</p>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-box">🛷 High-energy winter experience on an icy track</div>
+              <div class="feature-box">❄️ Suitable for guests who enjoy adventurous activities</div>
+              <div class="feature-box">⚡ Creates excitement and unforgettable holiday memories</div>
+              <div class="feature-box">🏔️ Great choice for adding variety to a ski trip</div>
+            </div>
+          </div>
+
+          <div class="activity-card glass-card">
+            <div class="activity-header">
+              <div class="activity-name">
+                <h3>Ice Skating</h3>
+                <p>
+                  Ice skating is a fun and active winter activity that suits many visitors. It helps improve movement,
+                  balance, and coordination while also offering a social and enjoyable experience for families, couples, and friends.
+                </p>
+              </div>
+              <div class="activity-badge">Fun & Fitness</div>
+            </div>
+
+            <div class="activity-info">
+              <div class="info-item">
+                <h4>Best For</h4>
+                <p>Guests who want a playful activity that is both enjoyable and healthy.</p>
+              </div>
+              <div class="info-item">
+                <h4>Activity Style</h4>
+                <p>Light, social, active, and suitable for different ages.</p>
+              </div>
+              <div class="info-item">
+                <h4>Main Benefit</h4>
+                <p>Supports cardio fitness, balance, and full-body movement.</p>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-box">⛸️ A classic winter activity with movement and enjoyment</div>
+              <div class="feature-box">💪 Supports strength, balance, and coordination</div>
+              <div class="feature-box">👨‍👩‍👧 Suitable for different guests and group experiences</div>
+              <div class="feature-box">🌨️ A great way to enjoy the snowy holiday atmosphere</div>
+            </div>
+          </div>
+
+          <div class="activity-card glass-card">
+            <div class="activity-header">
+              <div class="activity-name">
+                <h3>Mountain Biking</h3>
+                <p>
+                  Mountain biking gives guests another outdoor option beyond the snow slopes. It is suitable for visitors
+                  who enjoy movement, fresh air, and a more adventurous way to explore the surrounding holiday area.
+                </p>
+              </div>
+              <div class="activity-badge">Outdoor Energy</div>
+            </div>
+
+            <div class="activity-info">
+              <div class="info-item">
+                <h4>Best For</h4>
+                <p>Guests who enjoy active outdoor exploration and a stronger physical challenge.</p>
+              </div>
+              <div class="info-item">
+                <h4>Activity Style</h4>
+                <p>Energetic, adventurous, and ideal for exploring natural surroundings.</p>
+              </div>
+              <div class="info-item">
+                <h4>Main Benefit</h4>
+                <p>Brings more variety and outdoor excitement to the holiday schedule.</p>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-box">🚵 Outdoor activity for active and adventurous visitors</div>
+              <div class="feature-box">🌲 A good way to enjoy scenery and movement together</div>
+              <div class="feature-box">💨 Supports fitness and exploration during the trip</div>
+              <div class="feature-box">🧭 Adds a different experience beyond skiing and skating</div>
+            </div>
+          </div>
+
+          <div class="activity-card glass-card">
+            <div class="activity-header">
+              <div class="activity-name">
+                <h3>Spa Treatments</h3>
+                <p>
+                  Spa treatments are a relaxing option for guests who want rest after active snow activities.
+                  They help create a calmer part of the holiday and are especially useful after skiing, skating, or other physical experiences.
+                </p>
+              </div>
+              <div class="activity-badge">Pure Relaxation</div>
+            </div>
+
+            <div class="activity-info">
+              <div class="info-item">
+                <h4>Best For</h4>
+                <p>Guests who want calm, comfort, and recovery during their stay.</p>
+              </div>
+              <div class="info-item">
+                <h4>Activity Style</h4>
+                <p>Peaceful, restorative, and suited to a premium holiday feeling.</p>
+              </div>
+              <div class="info-item">
+                <h4>Main Benefit</h4>
+                <p>Helps guests rest and recharge between more active experiences.</p>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-box">💆 A calm experience after high-energy winter activities</div>
+              <div class="feature-box">🌿 Supports comfort, recovery, and relaxation</div>
+              <div class="feature-box">✨ Adds a luxury feeling to the holiday stay</div>
+              <div class="feature-box">🕯️ A balanced choice for guests who want both activity and rest</div>
+            </div>
+          </div>
+
+          <div class="activity-card glass-card">
+            <div class="activity-header">
+              <div class="activity-name">
+                <h3>Holiday Moments Gallery</h3>
+                <p>
+                  These activity images help show the energy, relaxation, and variety available during a Fresh Holiday stay.
+                  Guests can enjoy different experiences across the trip, depending on their interests and preferred holiday style.
+                </p>
+              </div>
+              <div class="activity-badge">Visual Journey</div>
+            </div>
+
+            <div class="gallery-grid">
+              <img src="Image/28.jpg" alt="Other Activity Image 1">
+              <img src="Image/51.jpg" alt="Other Activity Image 2">
+              <img src="Image/52.jpg" alt="Other Activity Image 3">
+              <img src="Image/53.jpg" alt="Other Activity Image 4">
+              <img src="Image/54.jpg" alt="Other Activity Image 5">
+              <img src="Image/56.jpg" alt="Other Activity Image 6">
+              <img src="Image/55.jpg" alt="Other Activity Image 7">
+              <img src="Image/51.jpg" alt="Other Activity Image 8">
+            </div>
+          </div>
+
+          <div class="big-cta">
+            <h3>Want a holiday with more than skiing?</h3>
+            <p>
+              Fresh Holiday can help you build a more complete experience with extra winter activities,
+              relaxing options, and personalised travel choices. Contact us to plan a holiday that matches your interests.
+            </p>
+            <a href="Contact Us.html" class="btn">Contact Us Now</a>
+          </div>
+        </div>
+
+        <div class="sidebar-column">
+          <div class="side-card glass-card">
+            <h3>What We Need?</h3>
+            <div class="check-list">
+              <div>🧥 Ski or snowboard jacket</div>
+              <div>👖 Ski or snowboard pants or bibs</div>
+              <div>🧦 Ski or snowboard socks</div>
+              <div>🧤 Gloves or mittens</div>
+              <div>🪖 Helmet</div>
+              <div>🥽 Goggles</div>
+              <div>👕 Long underwear</div>
+              <div>🧣 Light fleece or wool top</div>
+            </div>
+          </div>
+
+          <div class="side-card glass-card">
+            <h3>Bob Sledding</h3>
+            <p>
+              Bobsledding, also called bobsleighing, is the sport of sliding down an icy track on a special sled.
+              It is one of the most exciting snow activities and is popular with guests who enjoy speed and adventure.
+            </p>
+          </div>
+
+          <div class="side-card glass-card">
+            <h3>Is Skating Good Exercise?</h3>
+            <p>
+              Yes. Skating is a good full-body activity that supports cardio fitness, strength, control, and balance.
+              It is also an enjoyable outdoor exercise that many people can include in their holiday routine.
+            </p>
+          </div>
+
+          <div class="side-card glass-card">
+            <h3>Why Try Other Activities?</h3>
+            <p>
+              Extra activities make the holiday more interesting because they give guests more choice.
+              Some people want adventure, while others prefer something calmer. A wider activity range makes the trip feel richer and more complete.
+            </p>
+          </div>
+
+          <div class="side-card glass-card">
+            <h3>Follow Fresh Holiday</h3>
+            <p>
+              Stay connected with our travel inspiration, winter holiday ideas, and activity highlights through our social pages.
+            </p>
+
+            <div class="socials">
+              <a href="https://www.facebook.com/SkiVacations/" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.youtube.com/c/DamnSkilled" target="_blank"><i class="fa fa-youtube"></i></a>
+              <a href="https://www.instagram.com/explore/tags/skiing/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>📞 Contact Us - +19159969739, +17864206154</p>
+    <p>© Fresh Holiday — Detailed Winter Activities Experience</p>
+  </footer>
+
+</body>
+</html>

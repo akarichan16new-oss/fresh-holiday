@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Holiday | Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(129, 226, 255, 0.20), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(186, 165, 255, 0.18), transparent 28%),
+        linear-gradient(135deg, #07111d 0%, #102033 45%, #17395b 100%);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 16, 28, 0.78);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      width: min(1200px, 92%);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #8fe5ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: #d6e8f8;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+
+    .hero {
+      padding: 78px 0 50px;
+    }
+
+    .hero-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      min-height: 450px;
+      display: flex;
+      align-items: center;
+      padding: 60px;
+      background:
+        linear-gradient(rgba(4, 9, 18, 0.35), rgba(4, 9, 18, 0.78)),
+        url('Image/20.jpg') center/cover no-repeat;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+    }
+
+    .hero-box::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5, 11, 22, 0.86) 0%, rgba(5, 11, 22, 0.38) 60%, rgba(5, 11, 22, 0.70) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: #c6f3ff;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 62px;
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .hero-content p {
+      max-width: 620px;
+      color: #e5eef8;
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .intro-strip {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .intro-box {
+      padding: 18px 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .intro-box h4 {
+      font-size: 20px;
+      color: #90ebff;
+      margin-bottom: 6px;
+    }
+
+    .intro-box p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #e3edf8;
+    }
+
+    .section {
+      padding: 30px 0 80px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      max-width: 760px;
+      margin: auto;
+      color: #cad9e8;
+      line-height: 1.8;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.8fr;
+      gap: 24px;
+    }
+
+    .services-column {
+      display: grid;
+      gap: 28px;
+    }
+
+    .sidebar-column {
+      display: grid;
+      gap: 20px;
+      align-content: start;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .service-card {
+      padding: 30px;
+    }
+
+    .service-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .service-name h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .service-name p {
+      color: #ccdae8;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 650px;
+    }
+
+    .service-badge {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #8de7ff, #baa8ff);
+      color: #07121d;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .service-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .info-item {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .info-item h4 {
+      font-size: 15px;
+      color: #98ecff;
+      margin-bottom: 8px;
+    }
+
+    .info-item p {
+      font-size: 14px;
+      color: #e6f1fb;
+      line-height: 1.7;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .feature-box {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #ecf5ff;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .mini-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .mini-gallery img {
+      height: 150px;
+      object-fit: cover;
+      border-radius: 18px;
+      transition: transform 0.4s ease;
+    }
+
+    .mini-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .side-card {
+      padding: 24px;
+    }
+
+    .side-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      margin-bottom: 14px;
+    }
+
+    .side-card p {
+      color: #d6e2ee;
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .check-list div {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #eaf4ff;
+      font-size: 14px;
+    }
+
+    .size-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .size-list div {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #eaf4ff;
+      font-size: 14px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .socials a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 20px;
+      transition: 0.3s ease;
+    }
+
+    .socials a:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .big-cta {
+      margin-top: 10px;
+      padding: 34px 28px;
+      text-align: center;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(141, 231, 255, 0.16), rgba(186, 168, 255, 0.15));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+    }
+
+    .big-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .big-cta p {
+      color: #d9e4f0;
+      max-width: 720px;
+      margin: 0 auto 20px;
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #8de7ff, #baa8ff);
+      color: #08131f;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(141, 231, 255, 0.20);
+    }
+
+    .footer {
+      margin-top: 70px;
+      padding: 24px 0;
+      text-align: center;
+      background: rgba(5, 12, 22, 0.74);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #d7e3f0;
+    }
+
+    .footer p {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1050px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+      }
+
+      .service-info {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .hero-box {
+        padding: 36px 24px;
+        min-height: 380px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .intro-strip,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav-inner {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .mini-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">Fresh <span>Holiday</span></div>
+      <div class="nav-links">
+        <a href="Fresh Holiday.html">Home</a>
+        <a href="Contact Us.html">Contact Us</a>
+        <a href="Packages Offered.html">Package Offered</a>
+        <a href="Services.html" class="active">Service Offered</a>
+        <a href="Other Activiti.html">Other Activities</a>
+        <a href="Location.html">Location</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-box">
+        <div class="hero-content">
+          <div class="hero-tag">🏂 Service Support • Detailed Winter Experience</div>
+          <h1>Professional services for a better and safer ski holiday</h1>
+          <p>
+            Fresh Holiday offers practical and helpful services to support every guest during their winter trip.
+            From beginner lessons to equipment hire and servicing support, our services are designed to make your
+            snow experience more comfortable, more enjoyable, and easier to manage.
+          </p>
+
+          <div class="intro-strip">
+            <div class="intro-box">
+              <h4>Learn</h4>
+              <p>Build confidence on the snow with lessons designed for different skill levels.</p>
+            </div>
+            <div class="intro-box">
+              <h4>Prepare</h4>
+              <p>Hire the equipment you need without the stress of bringing everything yourself.</p>
+            </div>
+            <div class="intro-box">
+              <h4>Support</h4>
+              <p>Keep your gear in better condition with proper fitting and servicing advice.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>
+          These services are prepared to support beginners, returning skiers, and experienced visitors.
+          Each service is planned to improve safety, comfort, and enjoyment throughout the holiday.
+        </p>
+      </div>
+
+      <div class="content-grid">
+        <div class="services-column">
+
+          <div class="service-card glass-card">
+            <div class="service-header">
+              <div class="service-name">
+                <h3>Ski / Snowboard Lessons</h3>
+                <p>
+                  Our lesson service is useful for guests who want to build confidence and feel safer on the slopes.
+                  Beginners usually need at least a week of group lessons or a series of three two-hour sessions
+                  to become more comfortable and in control.
+                </p>
+              </div>
+              <div class="service-badge">Skill Building</div>
+            </div>
+
+            <div class="service-info">
+              <div class="info-item">
+                <h4>Best For</h4>
+                <p>Beginners and guests who want to improve technique and confidence.</p>
+              </div>
+              <div class="info-item">
+                <h4>Learning Style</h4>
+                <p>Step-by-step guidance with practice, safety awareness, and control.</p>
+              </div>
+              <div class="info-item">
+                <h4>Main Benefit</h4>
+                <p>Better balance, better movement, and a safer mountain experience.</p>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-box">🎿 Group lessons for beginners and improving skiers</div>
+              <div class="feature-box">🕒 Recommended three two-hour sessions or longer practice</div>
+              <div class="feature-box">🧭 Guidance to help guests feel safe and in control</div>
+              <div class="feature-box">🏔️ Faster improvement with regular instruction and support</div>
+            </div>
+
+            <div class="mini-gallery">
+              <img src="Image/20.jpg" alt="Lesson Image 1">
+              <img src="Image/27.jpg" alt="Lesson Image 2">
+              <img src="Image/10.jpg" alt="Lesson Image 3">
+              <img src="Image/35.jpg" alt="Lesson Image 4">
+            </div>
+          </div>
+
+          <div class="service-card glass-card">
+            <div class="service-header">
+              <div class="service-name">
+                <h3>Equipment Hire</h3>
+                <p>
+                  Our equipment hire service helps guests travel more easily without carrying all their own gear.
+                  Visitors can arrange the main skiing items they need for comfort, movement, and safety during the trip.
+                </p>
+              </div>
+              <div class="service-badge">Travel Easy</div>
+            </div>
+
+            <div class="service-info">
+              <div class="info-item">
+                <h4>Best For</h4>
+                <p>Guests who do not own full skiing equipment or want lighter travel.</p>
+              </div>
+              <div class="info-item">
+                <h4>Service Style</h4>
+                <p>Practical, convenient, and suitable for short or extended holiday stays.</p>
+              </div>
+              <div class="info-item">
+                <h4>Main Benefit</h4>
+                <p>Less travel stress and easier access to important ski equipment.</p>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-box">⛷️ Skis, boots, helmet, goggles, and ski poles</div>
+              <div class="feature-box">🧤 Clothing support such as gloves, base layers, and jackets</div>
+              <div class="feature-box">🧳 Optional items like ski bags and travel accessories</div>
+              <div class="feature-box">❄️ Better convenience for guests who want a simple trip</div>
+            </div>
+
+            <div class="mini-gallery">
+              <img src="Image/21.jpg" alt="Equipment Image 1">
+              <img src="Image/48.jpg" alt="Equipment Image 2">
+              <img src="Image/49.jpg" alt="Equipment Image 3">
+              <img src="Image/50.jpg" alt="Equipment Image 4">
+            </div>
+          </div>
+
+          <div class="service-card glass-card">
+            <div class="service-header">
+              <div class="service-name">
+                <h3>Ski / Snowboard Servicing</h3>
+                <p>
+                  Proper servicing and fitting are important for comfort and performance. Our service guidance helps
+                  guests understand equipment fit, board size, and boot choice so they can avoid unnecessary difficulty on the snow.
+                </p>
+              </div>
+              <div class="service-badge">Fit & Support</div>
+            </div>
+
+            <div class="service-info">
+              <div class="info-item">
+                <h4>Best For</h4>
+                <p>Guests who want more comfort, better fit, and more control while riding.</p>
+              </div>
+              <div class="info-item">
+                <h4>Service Style</h4>
+                <p>Helpful fitting advice with attention to size, movement, and equipment balance.</p>
+              </div>
+              <div class="info-item">
+                <h4>Main Benefit</h4>
+                <p>Better performance and fewer problems caused by poor equipment fit.</p>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-box">👢 Boot fitting advice for snowboard and ski comfort</div>
+              <div class="feature-box">📏 Board and boot size guidance for better balance</div>
+              <div class="feature-box">🛠️ Practical support for smoother performance on snow</div>
+              <div class="feature-box">✅ Better control by avoiding equipment that is too large or unsuitable</div>
+            </div>
+
+            <div class="mini-gallery">
+              <img src="Image/22.jpg" alt="Servicing Image 1">
+              <img src="Image/45.jpg" alt="Servicing Image 2">
+              <img src="Image/46.jpg" alt="Servicing Image 3">
+              <img src="Image/47.jpg" alt="Servicing Image 4">
+            </div>
+          </div>
+
+          <div class="big-cta">
+            <h3>Need help choosing the right service?</h3>
+            <p>
+              Some guests need lessons, some need equipment, and others need full support during their ski holiday.
+              Contact Fresh Holiday and we can help you choose the most suitable service for your trip.
+            </p>
+            <a href="Contact Us.html" class="btn">Contact Us Now</a>
+          </div>
+        </div>
+
+        <div class="sidebar-column">
+          <div class="side-card glass-card">
+            <h3>Custom Packages</h3>
+            <p>
+              Custom packages may include group lessons, après-ski activities, and crèche facilities.
+              These options are useful for families, friend groups, or guests who want a more flexible and personalised holiday.
+            </p>
+          </div>
+
+          <div class="side-card glass-card">
+            <h3>What We Need?</h3>
+            <div class="check-list">
+              <div>🧥 Ski or snowboard jacket</div>
+              <div>👖 Ski or snowboard pants or bibs</div>
+              <div>🧦 Ski or snowboard socks</div>
+              <div>🧤 Gloves or mittens</div>
+              <div>🪖 Helmet</div>
+              <div>🥽 Goggles</div>
+              <div>👕 Long underwear</div>
+              <div>🧣 Light fleece or wool top</div>
+            </div>
+          </div>
+
+          <div class="side-card glass-card">
+            <h3>Board Size Guide</h3>
+            <div class="size-list">
+              <div>4'10" — 147 cm — 125 to 135</div>
+              <div>5'1" — 155 cm — 130 to 140</div>
+              <div>5'3" — 160 cm — 135 to 145</div>
+              <div>5'4" — 163 cm — 140 to 150</div>
+            </div>
+          </div>
+
+          <div class="side-card glass-card">
+            <h3>What Equipment Is Used?</h3>
+            <p>
+              The main skiing equipment includes skis, ski boots, goggles, a helmet, and ski poles.
+              Optional items may include sunglasses, a ski bag, extra warm clothing, and other small travel accessories.
+            </p>
+          </div>
+
+          <div class="side-card glass-card">
+            <h3>Winter Activities</h3>
+            <p>
+              Visitors can also enjoy winter sports such as bobsledding and skating.
+              These activities bring extra energy, movement, and adventure to the holiday experience.
+            </p>
+
+            <div class="socials">
+              <a href="https://www.facebook.com/SkiVacations/" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.youtube.com/c/DamnSkilled" target="_blank"><i class="fa fa-youtube"></i></a>
+              <a href="https://www.instagram.com/explore/tags/skiing/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>📞 Contact Us - +19159969739, +17864206154</p>
+    <p>© Fresh Holiday — Detailed Winter Services Experience</p>
+  </footer>
+
+</body>
+</html>
